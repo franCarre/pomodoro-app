@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap')
+
+// Colors
+$col-very-dark: #151A31
+$col-dark: #1E2140
+$col-light-gray: #D4DFFB
+$col-white: #FFFFFF
+$col-red: #FC7274
+$col-pink: #D57BF9
+$col-blue: #71EDF1
+
+// Font family
+$font-family: 'Barlow', sans-serif
+
+// Font weights
+$regular: 400
+$bold: 700
+
+// Spacing
+$space-max-width: 111rem
+
+// Design elements
+$transition: 300ms ease-in-out
+
+// Reset
+html
+  box-sizing: border-box
+  font-size: 62.5%
+
+*, *::before, *::after
+  box-sizing: inherit
+
+body
+  background-color: $col-dark
+  font-family: $font-family
+  font-size: 1.5rem
+  margin: 0
+  overflow-x: hidden
+
+ul
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, p
+  margin: 0
+
+a
+  text-decoration: none
+
+label
+  display: block
+
+button
+  border: none
+  display: flex
+  align-items: center
+  justify-content: center
+
+// Typography
+
+.t-h1
+  color: $col-light-gray
+  font-weight: $bold
+  text-transform: lowercase
+  margin-bottom: 5rem
+
+.t-h3
+  color: $col-very-dark
+  font-size: 1.4rem
+  font-weight: $bold
+  letter-spacing: 4px
+  text-transform: uppercase
+  margin-bottom: 2rem

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Pomodoro App</title>
+</head>
+<body>
+
+<div class="wrapper">
+  <header class="header">
+    <h1 class="t-h1">Pomodoro</h1>
+    <nav class="nav">
+      <ul class="nav__items">
+        <li class="nav__item nav__item--active" id="pomodoro">Pomodoro</li>
+        <li class="nav__item" id="shortBreak">Short break</li>
+        <li class="nav__item" id="longBreak">Long break</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="timer">
+      <div class="timer__bg timer__bg--1"></div>
+      <div class="timer__bg timer__bg--2"></div>
+
+      <div class="timer__text">
+        <h2 class="timer__text-time" id="countdown">00:00</h2>
+        <button class="timer__text-pause" id="countdownBtn">start</button>
+      </div>
+
+      <div class="timer__circle" id="circle"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button class="footer__icon trigger"><i class="fas fa-cog"></i></button>
+    <section class="modal">
+
+      <div class="modal__content">
+        
+        <div class="modal__header">
+          <h2 class="modal__header-heading">Settings</h2>
+          <span class="modal__close-btn">&times;</span>
+        </div>
+
+        <div class="modal__settings">
+          <div class="modal__time">
+            <h3 class="modal__time-heading t-h3">Time (minutes)</h3>
+            <div class="modal__time-inputs">
+              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
+              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
+              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
+            </div>
+          </div>
+  
+          <div class="modal__font">
+            <h3 class="modal__font-heading t-h3">Font</h3>
+          </div>
+  
+          <div class="modal__color">
+            <h3 class="modal__color-heading t-h3">Color</h3>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+  </footer>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

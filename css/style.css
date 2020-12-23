@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #1E2140;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  display: block;
+}
+
+button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.t-h1 {
+  color: #D4DFFB;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: 5rem;
+}
+
+.t-h3 {
+  color: #151A31;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.nav {
+  background-color: #151A31;
+  border-radius: 5rem;
+  padding: 0.7rem;
+  margin-bottom: 5rem;
+}
+.nav__items {
+  display: flex;
+}
+.nav__item {
+  border-radius: 5rem;
+  color: #797f92;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1.5rem 2.5rem 1.7rem;
+  text-transform: lowercase;
+}
+.nav__item--active {
+  background-color: #FC7274;
+  color: #151A31;
+}
+
+.footer__icon {
+  background: none;
+  color: #D4DFFB;
+  cursor: pointer;
+  font-size: 3rem;
+  opacity: 0.5;
+  outline: none;
+}
+.footer__icon:hover {
+  opacity: 1;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  margin-bottom: 20rem;
+  height: 40rem;
+  width: 40rem;
+}
+.timer__bg {
+  border-radius: 50%;
+  position: absolute;
+}
+.timer__bg--1 {
+  background: linear-gradient(145deg, #151A31 0%, #2b2d53 100%);
+  box-shadow: 30px 30px 60px #141833, -30px -30px 60px #262b55;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+.timer__bg--2 {
+  background-color: #151A31;
+  height: 92%;
+  width: 92%;
+  z-index: 1;
+}
+.timer__circle {
+  background: conic-gradient(#FC7274 0%, #FC7274 80%, #151A31 80%);
+  border-radius: 50%;
+  position: absolute;
+  height: 85%;
+  width: 85%;
+  z-index: 2;
+}
+.timer__text {
+  background-color: #151A31;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  z-index: 5;
+}
+.timer__text-time {
+  color: #D4DFFB;
+  font-size: 7rem;
+}
+.timer__text-pause {
+  background: none;
+  color: #D4DFFB;
+  cursor: pointer;
+  letter-spacing: 10px;
+  outline: none;
+  text-transform: uppercase;
+  transform: translateY(2rem);
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: fixed;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 5;
+}
+.modal__content {
+  background-color: white;
+  border-radius: 2rem;
+  color: #151A31;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40rem;
+  width: 50rem;
+}
+.modal__header {
+  border-bottom: 1px solid #E6E6E6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 3.5rem;
+}
+.modal__time {
+  border-bottom: 1px solid #E6E6E6;
+  padding: 2rem 3.5rem;
+}
+.modal__time__inputs {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.modal__time input {
+  background-color: #EEF1F9;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.3rem;
+  outline: none;
+  max-width: 12rem;
+}
+.modal__time input:nth-of-type(2) {
+  margin: 0 2rem;
+}
+.modal__font {
+  padding: 2rem 3.5rem;
+  border-bottom: 1px solid #E6E6E6;
+}
+.modal__color {
+  padding: 2rem 3.5rem;
+}
+.modal__close-btn {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.modal__close-btn:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}

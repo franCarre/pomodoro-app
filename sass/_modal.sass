@@ -1,0 +1,74 @@
+.modal
+  background-color: rgba(0, 0, 0, 0.5)
+  left: 0
+  top: 0
+  opacity: 0
+  position: fixed
+  transform: scale(1.1)
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s
+  height: 100%
+  width: 100%
+  visibility: hidden
+  z-index: 5
+
+  &__content
+    background-color: white
+    border-radius: 2rem
+    color: $col-very-dark
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 40rem
+    width: 50rem
+
+  &__header
+    border-bottom: 1px solid #E6E6E6
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 3rem 3.5rem
+
+  &__settings
+
+  &__time
+    border-bottom: 1px solid #E6E6E6
+    padding: 2rem 3.5rem
+    &__inputs
+      display: flex
+      flex-wrap: nowrap
+    & input
+      background-color: #EEF1F9
+      border: none
+      border-radius: 1rem
+      padding: 1.3rem
+      outline: none
+      max-width: 12rem
+      &:nth-of-type(2)
+        margin: 0 2rem
+  
+  &__font
+    padding: 2rem 3.5rem
+    border-bottom: 1px solid #E6E6E6
+
+  &__color
+    padding: 2rem 3.5rem
+
+
+
+  &__close-btn
+    float: right
+    width: 1.5rem
+    line-height: 1.5rem
+    text-align: center
+    cursor: pointer
+    border-radius: 0.25rem
+    background-color: lightgray
+    &:hover
+      background-color: darkgray
+
+.show-modal
+  opacity: 1
+  visibility: visible
+  transform: scale(1.0)
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s

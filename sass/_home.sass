@@ -1,0 +1,38 @@
+.wrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  margin-top: 5rem
+
+.header
+  text-align: center
+
+.nav
+  background-color: $col-very-dark
+  border-radius: 5rem
+  padding: 0.7rem
+  margin-bottom: 5rem
+  &__items
+    display: flex
+  &__item
+    border-radius: 5rem
+    color: #797f92
+    cursor: pointer
+    font-weight: $bold
+    padding: 1.5rem 2.5rem 1.7rem
+    text-transform: lowercase
+    &--active
+      background-color: $col-red
+      color: $col-very-dark
+
+.footer
+  &__icon
+    background: none
+    color: $col-light-gray
+    cursor: pointer
+    font-size: 3rem
+    opacity: 0.5
+    outline: none
+    &:hover
+      opacity: 1
