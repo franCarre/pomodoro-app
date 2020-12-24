@@ -22,9 +22,15 @@
     font-weight: $bold
     padding: 1.5rem 2.5rem 1.7rem
     text-transform: lowercase
+    transition: $transition
+    &:hover
+      color: $col-light-gray
+      
     &--active
       background-color: $col-red
       color: $col-very-dark
+      &:hover
+        color: initial
 
 .footer
   &__icon
@@ -34,5 +40,6 @@
     font-size: 3rem
     opacity: 0.5
     outline: none
+    transition: $transition
     &:hover
       opacity: 1

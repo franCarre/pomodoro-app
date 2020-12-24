@@ -9,7 +9,7 @@
   height: 100%
   width: 100%
   visibility: hidden
-  z-index: 5
+  z-index: 10
 
   &__content
     background-color: white
@@ -46,16 +46,44 @@
       max-width: 12rem
       &:nth-of-type(2)
         margin: 0 2rem
+      &[type=number]::-webkit-inner-spin-button
+        cursor: pointer
+        opacity: 1
   
   &__font
-    padding: 2rem 3.5rem
     border-bottom: 1px solid #E6E6E6
+    display: flex
+    justify-content: space-between
+    padding: 2rem 3.5rem
+    &-btns
+      display: flex
+    &-btn
+      background-color: #EEF1F9
+      border-radius: 5rem
+      height: 4rem
+      width: 4rem
+      &:nth-of-type(2)
+        margin: 0 2rem
 
   &__color
+    display: flex
+    justify-content: space-between
     padding: 2rem 3.5rem
-
-
-
+    &-btns
+      display: flex
+    &-btn
+      background-color: #EEF1F9
+      border-radius: 5rem
+      height: 4rem
+      width: 4rem
+      &:nth-of-type(2)
+        margin: 0 2rem
+      &--red
+        background-color: $col-red
+      &--blue
+        background-color: $col-blue
+      &--pink
+        background-color: $col-pink
   &__close-btn
     float: right
     width: 1.5rem
@@ -66,6 +94,17 @@
     background-color: lightgray
     &:hover
       background-color: darkgray
+  &__apply
+    background-color: $col-red
+    border-radius: 5rem
+    color: $col-white
+    font-weight: $bold
+    padding: 1.2rem 3rem
+    position: absolute
+    bottom: -2rem
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 11
 
 .show-modal
   opacity: 1

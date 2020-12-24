@@ -37,9 +37,11 @@ label {
 
 button {
   border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
 }
 
 .t-h1 {
@@ -86,10 +88,17 @@ button {
   font-weight: 700;
   padding: 1.5rem 2.5rem 1.7rem;
   text-transform: lowercase;
+  transition: 200ms ease-in-out;
+}
+.nav__item:hover {
+  color: #D4DFFB;
 }
 .nav__item--active {
   background-color: #FC7274;
   color: #151A31;
+}
+.nav__item--active:hover {
+  color: initial;
 }
 
 .footer__icon {
@@ -99,6 +108,7 @@ button {
   font-size: 3rem;
   opacity: 0.5;
   outline: none;
+  transition: 200ms ease-in-out;
 }
 .footer__icon:hover {
   opacity: 1;
@@ -150,11 +160,11 @@ button {
   position: absolute;
   height: 80%;
   width: 80%;
-  z-index: 5;
 }
 .timer__text-time {
   color: #D4DFFB;
-  font-size: 7rem;
+  font-size: 10rem;
+  z-index: 6;
 }
 .timer__text-pause {
   background: none;
@@ -163,7 +173,23 @@ button {
   letter-spacing: 10px;
   outline: none;
   text-transform: uppercase;
-  transform: translateY(2rem);
+  transform: translateY(3rem);
+  transition: 200ms ease-in-out;
+  z-index: 6;
+}
+.timer__text-pause:hover {
+  color: #FC7274;
+}
+
+svg {
+  z-index: 5;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.circle_animation {
+  transition: all 1s linear;
+  z-index: 5;
 }
 
 .modal {
@@ -177,7 +203,7 @@ button {
   height: 100%;
   width: 100%;
   visibility: hidden;
-  z-index: 5;
+  z-index: 10;
 }
 .modal__content {
   background-color: white;
@@ -216,12 +242,53 @@ button {
 .modal__time input:nth-of-type(2) {
   margin: 0 2rem;
 }
+.modal__time input[type=number]::-webkit-inner-spin-button {
+  cursor: pointer;
+  opacity: 1;
+}
 .modal__font {
-  padding: 2rem 3.5rem;
   border-bottom: 1px solid #E6E6E6;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3.5rem;
+}
+.modal__font-btns {
+  display: flex;
+}
+.modal__font-btn {
+  background-color: #EEF1F9;
+  border-radius: 5rem;
+  height: 4rem;
+  width: 4rem;
+}
+.modal__font-btn:nth-of-type(2) {
+  margin: 0 2rem;
 }
 .modal__color {
+  display: flex;
+  justify-content: space-between;
   padding: 2rem 3.5rem;
+}
+.modal__color-btns {
+  display: flex;
+}
+.modal__color-btn {
+  background-color: #EEF1F9;
+  border-radius: 5rem;
+  height: 4rem;
+  width: 4rem;
+}
+.modal__color-btn:nth-of-type(2) {
+  margin: 0 2rem;
+}
+.modal__color-btn--red {
+  background-color: #FC7274;
+}
+.modal__color-btn--blue {
+  background-color: #71EDF1;
+}
+.modal__color-btn--pink {
+  background-color: #D57BF9;
 }
 .modal__close-btn {
   float: right;
@@ -234,6 +301,18 @@ button {
 }
 .modal__close-btn:hover {
   background-color: darkgray;
+}
+.modal__apply {
+  background-color: #FC7274;
+  border-radius: 5rem;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 1.2rem 3rem;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
 }
 
 .show-modal {

@@ -41,10 +41,11 @@
     position: absolute
     height: 80%
     width: 80%
-    z-index: 5
     &-time
       color: $col-light-gray
-      font-size: 7rem
+      font-size: 10rem
+      z-index: 6
+
     &-pause
       background: none
       color: $col-light-gray
@@ -52,4 +53,18 @@
       letter-spacing: 10px
       outline: none
       text-transform: uppercase
-      transform: translateY(2rem)
+      transform: translateY(3rem)
+      transition: $transition
+      z-index: 6
+      &:hover
+        color: $col-red
+
+
+svg
+  z-index: 5
+  transform: rotate(-90deg)
+  -webkit-transform: rotate(-90deg)
+
+.circle_animation
+  transition: all 1s linear
+  z-index: 5

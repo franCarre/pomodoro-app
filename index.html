@@ -31,7 +31,12 @@
         <button class="timer__text-pause" id="countdownBtn">start</button>
       </div>
 
-      <div class="timer__circle" id="circle"></div>
+      <svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+        <g>
+         <circle id="circle" class="circle_animation" r="170" cy="200" cx="250" stroke-width="8" stroke="#FC7274" stroke-dasharray="1068" fill="none"/>
+        </g>
+       </svg>
+
     </section>
   </main>
 
@@ -50,21 +55,31 @@
           <div class="modal__time">
             <h3 class="modal__time-heading t-h3">Time (minutes)</h3>
             <div class="modal__time-inputs">
-              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
-              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
-              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoro">
+              <input class="modal__time-input" type="number" name="pomodoro" id="pomodoroInput" min="1" max="720" value="25">
+              <input class="modal__time-input" type="number" name="shortBreak" id="shortBreakInput" min="1" max="720" value="5">
+              <input class="modal__time-input" type="number" name="longBreak" id="longBreakInput" min="1" max="720" value="15">
             </div>
           </div>
   
           <div class="modal__font">
             <h3 class="modal__font-heading t-h3">Font</h3>
+            <div class="modal__font-btns">
+              <button class="modal__font-btn modal__font-btn--1" id="font-1">Aa</button>
+              <button class="modal__font-btn modal__font-btn--2" id="font-2">Aa</button>
+              <button class="modal__font-btn modal__font-btn--3" id="font-3">Aa</button>
+            </div>
           </div>
   
           <div class="modal__color">
             <h3 class="modal__color-heading t-h3">Color</h3>
+            <div class="modal__color-btns">
+              <button class="modal__color-btn modal__color-btn--red" id="font-1"></button>
+              <button class="modal__color-btn modal__color-btn--blue" id="font-2"></button>
+              <button class="modal__color-btn modal__color-btn--pink" id="font-3"></button>
+            </div>
           </div>
         </div>
-
+        <button class="modal__apply" id="applyBtn">Apply</button>
 
       </div>
     </section>

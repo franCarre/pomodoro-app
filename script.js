@@ -1,11 +1,12 @@
 // TIMER
 
-let pomodoro = document.getElementById('pomodoro');
-let shortBreak = document.getElementById('shortBreak');
-let longBreak = document.getElementById('longBreak');
+let pomodoroBtn = document.getElementById('pomodoro');
+let shortBreakBtn = document.getElementById('shortBreak');
+let longBreakBtn = document.getElementById('longBreak');
 
 let button = document.getElementById('countdownBtn');
 let countdown = document.getElementById('countdown');
+let circle = document.getElementById('circle');
 
 let startingMinutes = 25;
 let time = startingMinutes * 60;
@@ -13,9 +14,33 @@ let time = startingMinutes * 60;
 let isRunning = false;
 let timer;
 
-pomodoro.addEventListener('click', function() {
-  startingMinutes = 25;
-});
+const FULL_DASH_ARRAY = 1068;
+
+countdown.innerHTML = `${startingMinutes}:00`;
+
+function onPomodoro() {
+  startingMinutes = document.getElementById('pomodoroInput').value;
+  pomodoroBtn.classList.add('nav__item--active');
+  shortBreakBtn.classList.remove('nav__item--active');
+  longBreakBtn.classList.remove('nav__item--active');
+  reset();
+}
+
+function onShort() {
+  startingMinutes = document.getElementById('shortBreakInput').value;
+  shortBreakBtn.classList.add('nav__item--active');
+  pomodoroBtn.classList.remove('nav__item--active');
+  longBreakBtn.classList.remove('nav__item--active');
+  reset();
+}
+
+function onLong() {
+  startingMinutes = document.getElementById('longBreakInput').value;
+  longBreakBtn.classList.add('nav__item--active');
+  pomodoroBtn.classList.remove('nav__item--active');
+  shortBreakBtn.classList.remove('nav__item--active');
+  reset();
+}
 
 function start() {
 
@@ -28,6 +53,7 @@ function start() {
       seconds = seconds < 10 ? '0' + seconds : seconds;
       countdown.innerHTML = `${minutes}:${seconds}`;
       check(time);
+      setCircleDasharray();
     }, 1000);
     button.innerHTML = 'Pause';
 
@@ -38,6 +64,18 @@ function start() {
 
 };
 
+function calculateTimeFraction() {
+  const rawTimeFraction = time / (startingMinutes*60);
+  return rawTimeFraction - (1 / (startingMinutes*60)) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 1068`;
+  circle.setAttribute('stroke-dasharray', circleDasharray);
+}
+
 function pause() {
   clearInterval(timer);
   timer = null;
@@ -46,7 +84,7 @@ function pause() {
 function check(someTime) {
   if (someTime <= 0) {
     clearInterval(timer);
-    setTimeout(reset, 5000);
+    setTimeout(reset, 1000);
   } else {
     someTime--;
     time--;
@@ -60,10 +98,16 @@ function reset() {
   time = startingMinutes * 60;
   isRunning = false;
   button.innerHTML = 'Start';
-  countdown.innerHTML = '00:00';
+  countdown.innerHTML = `${startingMinutes}:00`;
 }
 
+pomodoroBtn.addEventListener('click', onPomodoro);
+shortBreakBtn.addEventListener('click', onShort);
+longBreakBtn.addEventListener('click', onLong);
 button.addEventListener('click', start);
+
+
+
 
 
 // Modal Window
